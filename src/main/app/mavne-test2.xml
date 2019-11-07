@@ -7,7 +7,7 @@
 http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
 http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd">
     <http:listener-config name="HTTP_Listener_Configuration" host="localhost" port="5050" doc:name="HTTP Listener Configuration"/>
-    <flow name="mavne_test2Flow">
+    <flow name="mavne-test2Flow">
         <http:listener config-ref="HTTP_Listener_Configuration" path="/" doc:name="HTTP"/>
         <set-payload value="#['Nilanjana']" doc:name="Set Payload"/>
     </flow>

@@ -5,10 +5,10 @@ http://www.springframework.org/schema/beans http://www.springframework.org/schem
 http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd">
     <munit:config name="munit" doc:name="MUnit configuration"/>
     <spring:beans>
-        <spring:import resource="classpath:mavne_test2.xml"/>
+        <spring:import resource="classpath:mavne-test2.xml"/>
     </spring:beans>
     <munit:test name="new1-test-suite-mavne_test2FlowTest" description="Test">
-        <flow-ref name="mavne_test2Flow" doc:name="Flow-ref to mavne_test2Flow"/>
+        <flow-ref name="mavne-test2Flow" doc:name="mavne-test2Flow"/>
         <munit:assert-on-equals expectedValue="#['Nilanjana']" actualValue="#[payload]" doc:name="Assert Equals"/>
     </munit:test>
 </mule>
