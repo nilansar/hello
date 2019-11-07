@@ -3,7 +3,7 @@
 
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.mycompany</groupId>
-	<artifactId>maven-test1</artifactId>
+	<artifactId>mavne_test2</artifactId>
     <version>1.0.0-SNAPSHOT</version>
     <packaging>mule</packaging>
 	<name>Mule mavne_test2 Application</name>
@@ -13,7 +13,7 @@
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
 		<mule.version>3.8.1</mule.version>
-    	<mule.tools.version>1.2</mule.tools.version>
+    	<mule.tools.version>1.7</mule.tools.version>
 	<munit.version>1.3.2</munit.version>
     <mule.munit.support.version>3.8.3</mule.munit.support.version>
     </properties>
@@ -29,19 +29,7 @@
                     <copyToAppsDirectory>true</copyToAppsDirectory>
 				</configuration>
 			</plugin>
-			<plugin>
-
-<groupId>org.apache.maven.plugins</groupId>
-
-<artifactId>maven-deploy-plugin</artifactId>
-
-<configuration>
-
-<skip>true</skip>
-
-</configuration>
-
-</plugin>
+			
 			<plugin>
 				<groupId>org.codehaus.mojo</groupId>
 				<artifactId>build-helper-maven-plugin</artifactId>
@@ -92,33 +80,36 @@
                 </configuration>
             </plugin>
             <plugin>
-  <groupId>org.mule.tools.maven</groupId>
-  <artifactId>mule-maven-plugin</artifactId>
-  <version>3.1.6</version>
-  <extensions>true</extensions>
-
-            <configuration>
-            <cloudHubDeployment>
-      <uri>https://anypoint.mulesoft.com/</uri>
-      <muleVersion>mule-version</muleVersion>
-      <username>nilman</username>
-      <password>Buri2@nilu</password>
-      <applicationName>maven-test1</applicationName>
-      <environment>Sandbox</environment>
-      <properties>
-        <key>value</key>
-      </properties>
-  </cloudHubDeployment>
-           </configuration>
-           <executions>
-           <execution>
-           <id>deploy</id><phase>deploy</phase>
-           <goals><goal>deploy</goal></goals></execution></executions> 
-           
-           
-            
-            </plugin>
-            
+<groupId>org.mule.tools.maven</groupId>
+<artifactId>mule-maven-plugin</artifactId>
+<version>2.0</version>
+<configuration>
+<deploymentType>cloudhub</deploymentType>
+<muleVersion>3.8.4</muleVersion>
+<username>nilman</username>
+<password>Buri2@nilu</password>
+<redeploy>true</redeploy>
+<environment>Sandbox</environment>
+<applicationName>mavne_test2</applicationName>
+<workerType>Micro</workerType>
+</configuration>
+<executions>
+<execution>
+<id>deploy</id>
+<phase>deploy</phase>
+<goals>
+<goal>deploy</goal>
+</goals>
+</execution>
+</executions>
+</plugin>
+<plugin>
+<groupId>org.apache.maven.plugins</groupId>
+<artifactId>maven-deploy-plugin</artifactId>
+<configuration>
+<skip>true</skip>
+</configuration>
+</plugin>
         </plugins>
 	<testResources>
             <testResource>
