@@ -17,8 +17,7 @@
 	<munit.version>1.3.2</munit.version>
     <mule.munit.support.version>3.8.3</mule.munit.support.version>
     </properties>
-
-	<build>
+<build>
 		<plugins>
 		<plugin>
 <groupId>org.mule.tools.maven</groupId>
@@ -31,6 +30,7 @@
 <password>Buri2@nilu</password>
 <redeploy>true</redeploy>
 <environment>Sandbox</environment>
+<application>target\maven-test-1.0.0-SNAPSHOT</application>
 <applicationName>mavne-test2</applicationName>
 <workerType>Micro</workerType>
 </configuration>
